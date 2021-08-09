@@ -11,7 +11,7 @@ open class InfiniteLayout: UICollectionViewFlowLayout {
     
     public var velocityMultiplier: CGFloat = 1 // used to simulate paging
     
-    private let multiplier: CGFloat = 500 // contentOffset multiplier
+    private let multiplier: CGFloat = 1 // contentOffset multiplier
     
     private var contentSize: CGSize = .zero
     
@@ -155,7 +155,7 @@ open class InfiniteLayout: UICollectionViewFlowLayout {
         guard let collectionView = self.collectionView else {
             return
         }
-        collectionView.contentOffset = offset
+//        collectionView.contentOffset = offset
         collectionView.layoutIfNeeded()
     }
     private func preferredContentOffset(forContentOffset contentOffset: CGPoint) -> CGPoint {
@@ -163,14 +163,14 @@ open class InfiniteLayout: UICollectionViewFlowLayout {
     }
     
     public func loopCollectionViewIfNeeded() {
-        guard let collectionView = self.collectionView, self.hasValidLayout else {
-            return
-        }
-        let page = self.pageIndex(from: self.page(for: collectionView.contentOffset))
-        let offset = self.preferredContentOffset(forContentOffset: collectionView.contentOffset)
-        if (page < 2 || page > self.multiplier - 2) && collectionView.contentOffset != offset {
-            self.updateContentOffset(offset)
-        }
+//        guard let collectionView = self.collectionView, self.hasValidLayout else {
+//            return
+//        }
+//        let page = self.pageIndex(from: self.page(for: collectionView.contentOffset))
+//        let offset = self.preferredContentOffset(forContentOffset: collectionView.contentOffset)
+//        if (page < 2 || page > self.multiplier - 2) && collectionView.contentOffset != offset {
+//            self.updateContentOffset(offset)
+//        }
     }
     
     // MARK: Paging
