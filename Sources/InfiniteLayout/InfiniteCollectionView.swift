@@ -108,6 +108,7 @@ open class InfiniteCollectionView: UICollectionView {
         #if os(iOS)
             self.scrollsToTop = false
         #endif
+        self.bounces = false
     }
     
     open override func layoutSubviews() {
